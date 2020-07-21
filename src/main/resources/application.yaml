@@ -19,10 +19,16 @@ spring:
     console:
       enabled: true
 management:
+  endpoint:
+    health:
+      show-details: always
+    loggers:
+      enabled: false
   endpoints:
     web:
       exposure:
-        include: '*'
+#        include: '*'
+        include: beans,metrics,info,health,loggers,readiness
 logging:
   level:
     root: DEBUG
